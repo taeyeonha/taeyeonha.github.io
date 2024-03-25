@@ -18,13 +18,15 @@
     <div class="container">
         <nav>
             <img src="images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="#">Resume</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()""></i>
         </nav>
         <div>
             <img src="images/background.png" class="background">
@@ -105,13 +107,28 @@
     </div>
 </div>
 
-<!-- ----------portfolio-------- -->
-<div id="portfolio">
+<!-- --------------contact------------- -->
+<div id="contact">
     <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img 
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> taeyeonha10@gmail.com</p>
+                <p><i class="fa-solid fa-square-phone"></i> 647-464-6478</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-regular fa-envelope"></i></a>
+                    <a href=""><i class="fa-solid fa-phone"></i></a>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="Text" name ="Name" placeholder="Your Name" required>
+                    <input type="Email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
             </div>
         </div>
     </div>
@@ -129,6 +146,19 @@
         for(tabcontent of tabcontents){
             tabcontent.classList.remove("active-tab");
         }
+    }
+
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu")
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
     }
 
 </script>
