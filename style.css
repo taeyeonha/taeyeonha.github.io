@@ -285,6 +285,13 @@ form btn2{
     cursor: pointer;
 }
 
+#msg{
+    color:aqua;
+    margin-top: -40px;
+    display: block;
+    transform: translateY(-10px);
+}
+
 /*------------------mobile-----------------------*/
 nav .fa-solid{
     display: none;
