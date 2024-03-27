@@ -26,14 +26,14 @@
                 <li><a href="#">Resume</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()""></i>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div>
             <img src="images/background.png" class="background">
         </div>
         <div class="header-text">
             <p>Software Engineering @ McMaster</p>
-            <h1>Hi, I'm <span>Tae Yeon Ha</span><br>from McMaster University!</h1>
+            <h1>Hey! I'm <span>TaeYeon Ha </span> from McMaster University!</h1>
         </div>
     </div>
 </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>2023 - 2028(Expected)</span><br>Bachelors of Software Engineering at McMaster University</li>
+                        <li><span>2023 - Current</span><br>Bachelors of Software Engineering at McMaster University</li>
                         <li><span>2019 - 2023</span><br>IB Diploma Programme at Glenforest Secondary School</li>
                     </ul>
                 </div>
@@ -134,34 +134,7 @@
     </div>
 </div>
 
-<script>
-
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-    }
-
-</script>
-
-<script>
-
-    var sidemenu = document.getElementById("sidemenu")
-
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
-
-</script>
+<script src="main.js"></script>
 
 </body>
 </html>
