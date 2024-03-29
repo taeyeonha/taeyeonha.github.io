@@ -200,7 +200,7 @@ nav ul li a:hover::after{
 }
 
 .projects-list div:hover{
-    background: #b4d5ff;
+    background: #6d85a1;
     transform: translateY(-10px);
 
 }
