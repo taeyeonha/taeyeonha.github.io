@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //------------website-------------------------
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
@@ -39,4 +40,3 @@ function closemenu(){
         form.reset()
       })
       .catch(error => console.error('Error!', error.message))
-  })
