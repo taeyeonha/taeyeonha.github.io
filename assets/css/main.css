@@ -453,7 +453,7 @@
   font-style: normal;
   font-display: optional;
   font-weight: 100 900;
-  src: url(../fonts/geist-latin-wght-normal.woff2) format("woff2-variations");
+  src: url(/assets/fonts/geist-latin-wght-normal.woff2) format("woff2-variations");
 }
 :root {
   font-optical-sizing: auto;
