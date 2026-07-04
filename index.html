@@ -1,139 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv=""X-UA-Compatible" content=""IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Google fonts link start-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!--Google fonts link end-->
-    <title>Tae Yeon Ha</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/d427f43560.js" crossorigin="anonymous"></script>
-</head>
-<body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div>
-            <img src="images/background.png" class="background">
-        </div>
-        <div class="header-text">
-            <p>Computer Engineering @ McMaster</p>
-            <h1>Hey! I'm <span><br>TaeYeon HA </span><br> from McMaster University!</h1>
-        </div>
-    </div>
-</div>
+<html lang="en" class="h-full"><head><meta charset="UTF-8">
+        <title>Felix Ha</title>
 
-<!------------------about------------------->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/user.png" alt="">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Languages</span><br>Python, JavaScript, HTML/CSS, TypeScript, Java</li>
-                        <li><span>Frameworks and Libraries</span><br>TensorFlow, Keras, PyTorch, pandas, scikit-learn, NumPy, OpenCV, MediaPipe, Matplotlib, XGBoost, Node.js, React, Flask, Tailwind CSS</li>
-                        <li><span>Tools and Technologies</span><br>VS Code, Git, Eclipse IDE, Jupyter Notebook, Arduino, Matlab</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2024 - Current</span><br>Machine Learning Engineer Intern @ Healthcare Systems R&A Inc.</li>
-                        <li><span>2024 - Current</span><br>Software Developer @ Google Developers Student Club McMasterU</li>
-                        <li><span>2024 - Current</span><br>Robotics Team Member @ RoboMasters McMasterU</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Current (Expected Graduation - April 2027)</span><br>B.E. in Computer Engineering (Co-op) at McMaster University</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <link rel="icon" type="image/svg+xml" href="logo.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!----------projects---------->
-<div id = "projects">
-    <div class="container">
-        <h1 class="sub-title">Projects</h1>
-        <div class="projects-list">
-            <div>
-                <i class="fa-solid fa-gamepad"></i>
-                <h2>MP3ify</h2>
-                <p>A python Spotify to MP3 converter using Spotipy and OAuth 2.0. Currently adding Shazam functionality to find songs that you like but do not know the title of.
-                    Also building a full-stack web application for an easier user experience.
+        <!-- Essential Meta Tags -->
+        <meta name="description" content="Software Engineer focused on AI systems, infrastructure, and developer tools.">
+        <meta name="author" content="Felix Ha">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Felix Ha">
+        <meta property="og:description" content="Software Engineer focused on AI systems, infrastructure, and developer tools.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://example.com">
+        <meta property="og:image" content="https://example.com/og.png">
+
+        <!-- styles & font -->
+        <link rel="preload" href="geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="">
+      <link rel="stylesheet" crossorigin="" href="assets/css/main.css"></head>
+
+    <body class="min-h-screen text-zinc-100 antialiased">
+        <canvas id="ascii" class="fixed inset-0 w-[100vw] h-[100vh] z-0 pointer-events-none opacity-50"></canvas>
+
+        <main class="relative z-10 min-h-screen px-6 py-16 md:px-10 max-w-2xl">
+            <section class="text-sm font-medium leading-relaxed text-pretty text-foreground space-y-6 text-zinc-300">
+                <h1 class="text-xl mb-6 text-zinc-100">Felix Ha</h1>
+
+                <p class="text-zinc-100">
+                    Currently studying Computer Engineering at
+                    McMaster University.
                 </p>
-                <!-- <a href="" target="_blank">Learn more</a> -->
-            </div>
-            <div>
-                <i class="fa-solid fa-house-crack"></i>
-                <h2>QuakeGuard</h2>
-                <p>A full stack website and ML model to forecast earthquakes. We participated in DeltaHacks X with this project, competing over 350 competitors. The Google Developers club at
-                    McMaster University reached out to us taking interest in our project and we participated their Google solutions hackathon.
+
+                <p class="sm:text-balance">
+                    This summer, I'll be joining
+                    <a href="https://cash.app/" class="underline underline-offset-2 transition hover:text-zinc-100">Cash App</a>
+                    as a Machine Learning Engineer intern on the Product Personalization team. Before that, I
+                    worked at
+                    <a href="https://squareup.com/ca/en/about" class="underline underline-offset-2 transition hover:text-zinc-100">Square</a>
+                    on internal AI tools and backend systems on the Channel Infrastructure team.
                 </p>
-                <a href="https://devpost.com/software/quakeguard" target="_blank"><u>Learn more</u></a>
-            </div>
-            <div>
-                <i class="fa-solid fa-microchip"></i>
-                <h2>Wheelchair Alert System</h2>
-                <p>Created an Arduino Uno program that flashes a light whenever an object comes within a metre of an ultrasonic sensor. It was made for project 4 of the course
-                    1P13: Cornerstone Design Projects from McMaster University for a disabled client in need of a wheelchair.
+
+                <p class="text-zinc-300">
+                    Featured work:
+                    <a href="https://github.com/taeyeonha/MakeCloud" class="underline underline-offset-2 transition hover:text-zinc-100">MakeCloud</a>,
+                    <a href="https://github.com/taeyeonha/SquareSeer" class="underline underline-offset-2 transition hover:text-zinc-100">SquareSeer</a>,
+                    <a href="https://github.com/taeyeonha/DQN-flappy-bird" class="underline underline-offset-2 transition hover:text-zinc-100">DQN-flappy-bird</a>, and
+                    <a href="https://github.com/taeyeonha" class="underline underline-offset-2 transition hover:text-zinc-100">more</a>.
                 </p>
-                <a href="https://github.com/taeyeonha/Wheelchair-Alert-System" target="_blank"><u>Learn more</u></a>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- --------------contact------------- -->
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> taeyeonha10@gmail.com</p>
-                <p><i class="fa-solid fa-square-phone"></i> 647-464-6478</p>
-                <div class="social-icons">
-                    <a href="https://github.com/taeyeonha" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/taeyeonha/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="contact-right">
-                <form name = "submit-to-google-sheet">
-                    <input type="Text" name ="Name" placeholder="Your Name" required>
-                    <input type="Email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </div>
-</div>
+                <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-zinc-400">
+                    <!-- <a class="underline underline-offset-2 transition hover:text-zinc-100" href="#" target="_blank" rel="noreferrer" aria-label="X">
+                        X
+                    </a> -->
+                    <a class="underline underline-offset-2 transition hover:text-zinc-100" href="https://github.com/taeyeonha" target="_blank" rel="noreferrer">GitHub</a>
+                    <a class="underline underline-offset-2 transition hover:text-zinc-100" href="https://www.linkedin.com/in/taeyeonha/" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a class="underline underline-offset-2 transition hover:text-zinc-100" href="mailto:taeyeonha10@gmail.com">Email</a>
+                </nav>
+            </section>
+        </main>
 
-<script src="main.js"></script>
+        <script>
+            const canvas = document.getElementById("ascii");
+            const ctx = canvas.getContext("2d", { alpha: true });
+            const chars = "  ..::++=xxYX";
 
-</body>
+            const state = {
+                width: 0,
+                height: 0,
+                cols: 0,
+                rows: 0,
+                cell: 12,
+                time: 0,
+            };
+            const origins = [
+                { x: 0.25, y: 0.35 },
+                { x: 0.72, y: 0.6 },
+                { x: 0.5, y: 0.15 },
+            ];
+
+            // ---- Precomputed per-cell geometry (rebuilt only on resize) ----
+            // For each origin we cache the distance-derived phase multiplier (dist*22)
+            // and the exponential falloff (exp(-dist*2.8)) so the per-frame hot loop
+            // only has to evaluate a handful of Math.sin calls instead of also doing
+            // sqrt/exp/trig-argument work for every cell, every frame.
+            let originDist = origins.map(() => new Float32Array(0));
+            let originFalloff = origins.map(() => new Float32Array(0));
+            let edgeFactor = new Float32Array(0);
+            let cellPxX = new Int16Array(0);
+            let cellPxY = new Int16Array(0);
+
+            // ---- Precomputed glyph/color buckets ----
+            // v is continuous, but the visible result only has as much precision as
+            // pixels + alpha steps can show. Quantizing v into fixed buckets lets us
+            // precompute the character AND the rgba() string once, avoiding a template
+            // literal allocation and a redundant chars[] lookup on every single cell
+            // of every single frame.
+            const BUCKETS = 96;
+            const bucketChar = new Array(BUCKETS + 1);
+            const bucketStyle = new Array(BUCKETS + 1);
+            for (let i = 0; i <= BUCKETS; i++) {
+                const v = i / BUCKETS;
+                const charIndex = Math.min(
+                    Math.floor(Math.min(v, 0.999) * chars.length),
+                    chars.length - 1,
+                );
+                bucketChar[i] = chars[charIndex];
+                bucketStyle[i] = `rgba(244, 244, 245, ${(0.04 + v * 0.25).toFixed(3)})`;
+            }
+
+            function resize() {
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                state.width = window.innerWidth;
+                state.height = window.innerHeight;
+                canvas.width = Math.floor(state.width * dpr);
+                canvas.height = Math.floor(state.height * dpr);
+                canvas.style.width = state.width + "px";
+                canvas.style.height = state.height + "px";
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                ctx.imageSmoothingEnabled = false;
+                ctx.font = "12px ui-monospace, SFMono-Regular, Menlo, monospace";
+                ctx.textBaseline = "top";
+
+                state.cols = Math.ceil(state.width / state.cell);
+                state.rows = Math.ceil(state.height / state.cell);
+
+                const total = state.cols * state.rows;
+                edgeFactor = new Float32Array(total);
+                cellPxX = new Int16Array(total);
+                cellPxY = new Int16Array(total);
+                originDist = origins.map(() => new Float32Array(total));
+                originFalloff = origins.map(() => new Float32Array(total));
+
+                const aspect = state.width / state.height;
+
+                for (let y = 0; y < state.rows; y++) {
+                    const ny = y / state.rows;
+                    for (let x = 0; x < state.cols; x++) {
+                        const idx = y * state.cols + x;
+                        const nx = x / state.cols;
+
+                        cellPxX[idx] = Math.round(x * state.cell);
+                        cellPxY[idx] = Math.round(y * state.cell);
+
+                        const edgeFade = Math.min(nx, 1 - nx, ny, 1 - ny) * 8;
+                        edgeFactor[idx] = Math.min(1, edgeFade);
+
+                        for (let o = 0; o < origins.length; o++) {
+                            const dx = (nx - origins[o].x) * aspect;
+                            const dy = ny - origins[o].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            originDist[o][idx] = dist * 22.0;
+                            originFalloff[o][idx] = Math.exp(-dist * 2.8);
+                        }
+                    }
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, state.width, state.height);
+
+                const phase = -state.time * 1.8;
+                const total = state.cols * state.rows;
+                const d0 = originDist[0], f0 = originFalloff[0];
+                const d1 = originDist[1], f1 = originFalloff[1];
+                const d2 = originDist[2], f2 = originFalloff[2];
+
+                let lastStyle = null;
+
+                for (let idx = 0; idx < total; idx++) {
+                    let v =
+                        Math.sin(d0[idx] + phase) * f0[idx] +
+                        Math.sin(d1[idx] + phase) * f1[idx] +
+                        Math.sin(d2[idx] + phase) * f2[idx];
+
+                    v = (v + 1) * 0.5;
+                    v *= edgeFactor[idx];
+                    if (v < 0.1) continue;
+
+                    const bucket = Math.min(BUCKETS, (v * BUCKETS) | 0);
+                    const style = bucketStyle[bucket];
+                    if (style !== lastStyle) {
+                        ctx.fillStyle = style;
+                        lastStyle = style;
+                    }
+                    ctx.fillText(bucketChar[bucket], cellPxX[idx], cellPxY[idx]);
+                }
+
+                state.time += 0.018;
+            }
+
+            // Debounce resize: dragging a window edge fires many resize events
+            // per second, and each one rebuilds every precomputed Float32Array.
+            // Wait for the resizing to settle before doing that work.
+            let resizeTimer = null;
+            window.addEventListener("resize", () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(resize, 100);
+            });
+
+            // Pause the render loop while the tab is in the background so it
+            // doesn't burn CPU/battery when nobody can see it.
+            let rafId = null;
+            function loop() {
+                draw();
+                rafId = requestAnimationFrame(loop);
+            }
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) {
+                    if (rafId !== null) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                } else if (rafId === null) {
+                    loop();
+                }
+            });
+
+            resize();
+            loop();
+        </script>
+
+
+</body></html>
